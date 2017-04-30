@@ -1,8 +1,10 @@
 #!/bin/bash
+# change the password of the root account to anything with the command passwd
+
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak &&
 #vim /etc/ssh/sshd_config 
-echo "PermitRootLogin no" > /etc/ssh/sshd_config &&
-echo "PasswordAuthentication no" > /etc/ssh/sshd_config &&
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config \
+echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config &&
 sshd -t &&
 service sshd restart
 
