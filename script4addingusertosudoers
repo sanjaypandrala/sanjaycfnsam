@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#useradd test \
+#passwd test \
+# enter passwd
+visudo &&
+%wheel ALL=(ALL) ALL
+# save changes
+usermod -aG wheel test &&
+su test &&
+groups &&
+test wheel &&
+sudo whoami
+
+
+
+
+
+exit 0
+
